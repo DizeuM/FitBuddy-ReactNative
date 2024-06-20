@@ -19,7 +19,7 @@ const home = () => {
     <SafeAreaView className="bg-white">
       <FlatList className=""
         data={atividades}
-        keyExtractor={(item) => item.$id}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <ActivityCard
           user_nome={item.user_nome}
@@ -82,8 +82,8 @@ const home = () => {
         )}
         ListEmptyComponent={() => (
           <EmptyState
-            title="No Videos Found"
-            subtitle="No videos created yet"
+            title="Nenhuma atividade encontrada"
+            subtitle="Nenhuma atividade postada ainda"
           />
         )}
         refreshControl={
