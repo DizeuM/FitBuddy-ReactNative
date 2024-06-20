@@ -18,7 +18,11 @@ exports.getAllAtividadesPorUsuario = async (req, res) => {
     const atividades = await Atividade.findAll({
         where: {
             user_id: userId
-        }
+        },
+        order: [
+          ['createdAt', 'DESC']
+        ]
+
     });
     res.status(200).json(atividades);
   } catch (error) {
@@ -27,16 +31,16 @@ exports.getAllAtividadesPorUsuario = async (req, res) => {
 };
 
 // Controlador para obter uma atividade por ID
-exports.getAtividadeById = async (req, res) => {
+exports.getTodasAtividades = async (req, res) => {
   try {
-    const atividade = await Atividade.findByPk(req.params.id);
-    if (atividade) {
-      res.status(200).json(atividade);
-    } else {
-      res.status(404).json({ error: 'Atividade not found' });
-    }
+    const atividades = await Atividade.findAll({
+      order: [
+        ['createdAt', 'DESC']
+      ]
+    });  // Fetch all activities from the database
+    res.status(200).json(atividades);  // Return the activities in the response
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(400).json({ error: error.message });  // Return any errors that occur
   }
 };
 
