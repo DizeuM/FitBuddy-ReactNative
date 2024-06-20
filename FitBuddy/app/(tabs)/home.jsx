@@ -1,25 +1,40 @@
-import { Image, View, Text, FlatList, RefreshControl } from 'react-native'
-import { useState } from "react";
+import React, { useEffect, useState } from 'react';
+import { Image, View, Text, FlatList, RefreshControl } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import icons from "../../constants/icons";
 import ActivityCard from "../../components/ActivityCard";
-import { SafeAreaView } from 'react-native-safe-area-context'
-import atividades from '../../data.json'
 
 const home = () => {
 
+  const [atividades, setAtividades] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://192.168.1.111:3000/api/atividades/usuario/1');
+      const data = await response.json();
+      setAtividades(data);
+    } catch (error) {
+      console.error('Erro ao buscar os dados:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const onRefresh = async () => {
     setRefreshing(true);
-    await refetch();
+    await fetchData();
     setRefreshing(false);
   };
 
   return (
     <SafeAreaView className="bg-white">
-      <FlatList className=""
+      <FlatList
+        className=""
         data={atividades}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.$id}
         renderItem={({ item }) => (
           <ActivityCard
           user_nome={item.user_nome}
@@ -65,34 +80,30 @@ const home = () => {
                 <Text className="font-mmedium text-md text-white">
                   Continue no foco e adicione uma nova atividade no feed
                 </Text>
-                
               </View>
             </View>
 
             <View className="mt-6">
               <View className="rounded-t-lg border-2 border-b-0 border-gray-200 px-4 py-3">
-
                 <Text className="font-msemibold text-2xl">
                   Atividades
                 </Text>
-                
               </View>
             </View>
           </View>
         )}
-        ListEmptyComponent={() => (
-          <EmptyState
-            title="Nenhuma atividade encontrada"
-            subtitle="Nenhuma atividade postada ainda"
-          />
-        )}
+        // ListEmptyComponent={() => (
+        //   <EmptyState
+        //     title="Nenhuma atividade encontrada"
+        //     subtitle="Nenhuma atividade postada ainda"
+        //   />
+        // )}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
       />
-
     </SafeAreaView>
-  )
+  );
 }
 
-export default home
+export default home;
