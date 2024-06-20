@@ -31,8 +31,7 @@ const home = () => {
 
   return (
     <SafeAreaView className="bg-white">
-      <FlatList
-        className=""
+      <FlatList className=""
         data={atividades}
         keyExtractor={(item) => item.$id}
         renderItem={({ item }) => (
@@ -80,14 +79,17 @@ const home = () => {
                 <Text className="font-mmedium text-md text-white">
                   Continue no foco e adicione uma nova atividade no feed
                 </Text>
+                
               </View>
             </View>
 
             <View className="mt-6">
               <View className="rounded-t-lg border-2 border-b-0 border-gray-200 px-4 py-3">
+
                 <Text className="font-msemibold text-2xl">
                   Atividades
                 </Text>
+                
               </View>
             </View>
           </View>
@@ -102,6 +104,7 @@ const home = () => {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
       />
+
     </SafeAreaView>
   );
 }
