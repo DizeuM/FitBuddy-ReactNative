@@ -1,0 +1,65 @@
+[
+    {
+      "user_nome": "Edson Junior",
+      "data_hora": "Hoje às 6:40",
+      "relogio": "Amazfit GTR 2",
+      "tipo_atividade": "Corrida",
+      "km": 5.2,
+      "duracao": "56m 53s",
+      "bpm": "118"
+    },
+    {
+      "user_nome": "Mateus Dizeu",
+      "data_hora": "Hoje às 5:30",
+      "relogio": "Apple watch SE",
+      "tipo_atividade": "Treino",
+      "km": null,
+      "duracao": "65m 45s",
+      "bpm": "109"
+    },
+    {
+      "user_nome": "André Luis",
+      "data_hora": "Ontem às 20:10",
+      "relogio": null,
+      "tipo_atividade": "Treino",
+      "km": null,
+      "duracao": "73m 23s",
+      "bpm": null
+    },
+    {
+      "user_nome": "Vitoria das Dores",
+      "data_hora": "Ontem às 19:20",
+      "relogio": null,
+      "tipo_atividade": "Corrida",
+      "km": 3,
+      "duracao": "56m 53s",
+      "bpm": null
+    },
+    {
+      "user_nome": "João Pedro",
+      "data_hora": "17/04 às 6:30",
+      "relogio": "Apple watch PRO",
+      "tipo_atividade": "Treino",
+      "km": null,
+      "duracao": "55m 58s",
+      "bpm": "118"
+    },
+    {
+      "user_nome": "Abynadark",
+      "data_hora": "16/04 às 18:30",
+      "relogio": null,
+      "tipo_atividade": "Treino",
+      "km": null,
+      "duracao": "66m 13s",
+      "bpm": null
+    },
+    {
+      "user_nome": "Kauã Rameh",
+      "data_hora": "16/04 às 6:40",
+      "relogio": "Amazfit GTR",
+      "tipo_atividade": "Corrida",
+      "km": "4.5",
+      "duracao": "70m 40s",
+      "bpm": "128"
+    }
+  ]
