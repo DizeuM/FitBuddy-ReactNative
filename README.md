@@ -12,7 +12,7 @@ FitBuddy é um aplicativo móvel que permite aos usuários:
 
 - 🖥️ React Native
 - 📱 Expo
-- 🌐 Axios
+- 🌐 Tailwind
 ## Backend:
 
 - 🟢 Node.js
