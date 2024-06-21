@@ -11,8 +11,9 @@ const home = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://192.168.1.111:3000/api/atividades/usuario/1');
+      const response = await fetch('http://192.168.1.111:3000/api/atividades');
       const data = await response.json();
+      console.log(data)
       setAtividades(data);
     } catch (error) {
       console.error('Erro ao buscar os dados:', error);
@@ -36,7 +37,7 @@ const home = () => {
         keyExtractor={(item) => item.$id}
         renderItem={({ item }) => (
           <ActivityCard
-          user_nome={item.user_nome}
+          user_nome={item.nome_usuario}
           data_hora={item.data_hora}
           relogio={item.relogio}
           tipo_atividade={item.tipo_atividade}

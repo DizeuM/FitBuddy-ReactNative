@@ -3,7 +3,7 @@ const router = express.Router();
 const atividadeController = require('../controllers/atividadeController');
 
 // Rotas para CRUD de atividades
-router.post('/atividades', atividadeController.createAtividade);
+router.post('/atividades/criar', atividadeController.createAtividade);
 router.get('/atividades/usuario/:id', atividadeController.getAllAtividadesPorUsuario);
 router.get('/atividades', atividadeController.getTodasAtividades);
 router.put('/atividades/:id', atividadeController.updateAtividade);

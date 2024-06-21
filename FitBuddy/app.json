@@ -13,7 +13,8 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "NSLocationWhenInUseUsageDescription": "Este aplicativo precisa acessar sua localização para mostrar os mapas corretamente."
     },
     "android": {
       "adaptiveIcon": {
