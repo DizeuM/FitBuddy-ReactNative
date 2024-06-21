@@ -5,7 +5,7 @@ const atividadeController = require('../controllers/atividadeController');
 // Rotas para CRUD de atividades
 router.post('/atividades', atividadeController.createAtividade);
 router.get('/atividades/usuario/:id', atividadeController.getAllAtividadesPorUsuario);
-router.get('/atividades/:id', atividadeController.getAtividadeById);
+router.get('/atividades', atividadeController.getTodasAtividades);
 router.put('/atividades/:id', atividadeController.updateAtividade);
 router.delete('/atividades/:id', atividadeController.deleteAtividade);
 

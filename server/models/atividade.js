@@ -46,6 +46,10 @@ atividade.init({
     type: DataTypes.STRING,
     allowNull: true  
   },
+  nome_usuario: {
+    type: DataTypes.STRING,
+    allowNull: false  
+  }
 }, {
   sequelize,
   modelName: 'atividade'

@@ -63,18 +63,22 @@ CREATE TABLE IF NOT EXISTS sets (
     FOREIGN KEY (treino_id) REFERENCES treinos (treino_id) ON DELETE CASCADE,
     FOREIGN KEY (exercicio_id) REFERENCES exercicios (exercicio_id)
 );
-
 -- Tabela atividades com ON DELETE CASCADE
 CREATE TABLE IF NOT EXISTS atividades (
     atividade_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
-    nome VARCHAR(255) NOT NULL,
-    descricao VARCHAR(255) NOT NULL,
-    data DATETIME NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users (usuario_id) ON DELETE CASCADE,
+    tipo_atividade VARCHAR(255) NOT NULL,
+    duracao TIME NOT NULL,
+    data_hora DATE NOT NULL,
+    km FLOAT,
+    bpm INT,
+    relogio VARCHAR(255),
     createdAt DATETIME NOT NULL,
-    updatedAt DATETIME NOT NULL
+    updatedAt DATETIME NOT NULL,
+    nome_usuario VARCHAR(255) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users (usuario_id) ON DELETE CASCADE
 );
+
 
 
 Roda o servidor com: node app.js
